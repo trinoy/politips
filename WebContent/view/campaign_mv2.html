@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CAMPAIGN</title>
+
+<script src="../JS_MV/jquery_MV.js"></script>
+
+<script src="../JS_MV/raphael.2.1.0.min_MV.js"></script>
+<script src="../JS_MV/justgage.1.0.1.min_MV.js"></script>
+<script src="../JS_MV/jquery.tagcanvas_MV.js" type="text/javascript"></script>
+<script src="../JS_MV/sliderengine/amazingslider.js"></script>
+    <script src="../JS_MV/sliderengine/initslider-1.js"></script>
+    
+    
+<link rel="stylesheet" href="../CSS_MV/style_MV.css" />
+<link rel="stylesheet" href="../CSS_MV/style2_MV.css" />
+<script src="../JS_MV/data_MV.js"></script>
+<script src="../JS_MV/campaign_MV.js"></script>
+
+
+<style>
+.amazingslider-wrapper-0 {
+display: block;
+position: relative;
+width: 100%;
+height: 300px;
+}
+
+#t_whole1{
+display: inline-block;
+position: absolute;
+width: 48%;
+height: 40%;
+left: 50.7%;
+border: 1px solid #ccc;
+top: 35%;
+}
+#t_whole{
+display: inline-block;
+position: absolute;
+width: 31%;
+height: 40%;
+left: 59.7%;
+
+top: 35%;
+}
+body{
+margin: 0px;
+display: inline-block;
+position: absolute;
+width: 100%;
+height: 100%;
+}
+#wrap{
+position: relative;
+width: 99.7%;
+height: 99.7%;
+background: white;
+border: 1px solid #cc;
+display: inline-block;
+}
+#dummy_header{
+position: absolute;
+width: 100%;
+height: 5%;
+
+
+}
+#left_container{
+position: absolute;
+width: 4%;
+height: 100%;
+
+}
+
+</style>
+
+</head>
+<body>
+	<div id="wrap">
+		<div id="left_container">
+		<div id="poli_modi" class="poli">
+				<div id="poli_bjp" style = "color: #fff;font-weight:bold;position: relative;top:44%;text-align:justify;-webkit-transform: rotate(270deg);">
+					BJP
+					</div>
+				</div>
+				<div id="poli_rahul" class="poli">
+			<div id="poli_inc" style = "color: #fff;font-weight:bold;position: relative;top:50%;text-align:justify;-webkit-transform: rotate(270deg);">
+				Congress
+				</div>
+				</div>
+				<div id="poli_kejri" class="poli">
+					<div id="poli_aap" style = "color: #fff;font-weight:bold;position: relative;top:44%;text-align:justify;-webkit-transform: rotate(270deg);">
+					AAP
+					</div>
+				</div>
+			</div>
+
+		<div id="right_container">
+			<div id="video_analysis">
+			
+				<div id='amazing_video'>
+ <div id="amazingslider-1" style="display:block;position:relative;margin:16px auto 6px;">
+        <ul class="amazingslider-slides" style="display:none;">
+            <li><img src="../images/SWA_HRwMg3w.jpg" alt="Shri Narendra Modi addressing a Public Meeting in Kochi organised" />
+                <video preload="none" src="http://www.youtube.com/embed/SWA_HRwMg3w" ></video>
+</li>
+            <li><img src="../images/qwsyrK9vP_Q.jpg" alt="Shri Narendra Modi attends the inauguration ceremony" />
+                <video preload="none" src="http://www.youtube.com/embed/qwsyrK9vP_Q" ></video>
+</li>
+            <li><img src="../images/vcL-2sDoy8M.jpg" alt="BJP leaders outlining their grand vision for glorious india " />
+                <video preload="none" src="http://www.youtube.com/embed/vcL-2sDoy8M" ></video>
+</li>
+        </ul>
+        <ul class="amazingslider-thumbnails" style="display:none;">
+            <li><img src="../images/SWA_HRwMg3w-tn.jpg" /></li>
+            <li><img src="../images/qwsyrK9vP_Q-tn.jpg" /></li>
+            <li><img src="../images/vcL-2sDoy8M-tn.jpg" /></li>
+        </ul>
+        <div class="amazingslider-engine" style="display:none;"><a href="http://amazingslider.com">JavaScript Slider</a></div>
+    </div>
+				</div>
+				<div id='v_container'>
+					<div id='v_header'>Top Comments</div>
+					<div id='v_comments_cont'></div>
+				</div>
+				<div id='gauge_container'>
+					<div id='gauge_header'>Score</div>
+					<div id='gauge1'></div>
+					
+				</div>
+				<div id='celebrity'>
+					<div id='celebrity_header'>Campaign By Celebrities</div>
+					<div id='celebrity_container'></div>
+				</div>
+				<div id='t_whole1' ></div>
+				<div id='t_whole' >
+					<canvas id="myCanvas_modi">
+				<ul>
+					<li><a style="font-size: 15pt">MODI</a></li>
+					<li><a style="font-size: 16pt">INDIA</a></li>
+					<li><a style="font-size: 5pt">GUJARAT</a></li>
+					<li><a style="font-size: 10pt">Tea Shop</a></li>
+					<li><a style="font-size: 10pt">Riot</a></li>
+					<li><a style="font-size: 15pt">BJP</a></li>
+					<li><a style="font-size: 15pt">Prime Minister</a></li>
+					<li><a style="font-size: 9pt">Ahmadabad</a></li>
+					<li><a style="font-size: 9pt">Nitish</a></li>
+					<li><a style="font-size: 10pt">Advani</a></li>
+					<li><a style="font-size: 18pt">Development</a></li>
+					<li><a style="font-size: 10pt">Education</a></li>
+					<li><a style="font-size: 10pt">LeaderShip</a></li>
+					<li><a style="font-size: 7pt">US-VISA</a></li>
+					<li><a style="font-size: 10pt">RSS</a></li>
+				</ul>
+				</canvas>
+
+				<canvas id="myCanvas_rahul">
+				<ul>
+					<li><a style="font-size: 15pt">Rahul</a></li>
+					<li><a style="font-size: 16pt">INDIA</a></li>
+					<li><a style="font-size: 5pt">Gandhi</a></li>
+					<li><a style="font-size: 10pt">Sonia</a></li>
+					<li><a style="font-size: 10pt">Priyanka</a></li>
+					<li><a style="font-size: 15pt">Congress</a></li>
+					<li><a style="font-size: 15pt">Prime Minister</a></li>
+					<li><a style="font-size: 9pt">Speech</a></li>
+					<li><a style="font-size: 9pt">LALU</a></li>
+					<li><a style="font-size: 10pt">ManMohan</a></li>
+					<li><a style="font-size: 18pt">Empowerment</a></li>
+					<li><a style="font-size: 10pt">Women</a></li>
+					<li><a style="font-size: 10pt">LeaderShip ?</a></li>
+					<li><a style="font-size: 7pt">UnMarried</a></li>
+					<li><a style="font-size: 10pt">Rajiv</a></li>
+				</ul>
+				</canvas>
+
+				<canvas id="myCanvas_kejri">
+				<ul>
+					<li><a style="font-size: 15pt">Kejriwal</a></li>
+					<li><a style="font-size: 16pt">INDIA</a></li>
+					<li><a style="font-size: 5pt">Delhi</a></li>
+					<li><a style="font-size: 10pt">IIT</a></li>
+					<li><a style="font-size: 10pt">Lokpal</a></li>
+					<li><a style="font-size: 15pt">AAP</a></li>
+					<li><a style="font-size: 15pt">Future</a></li>
+					<li><a style="font-size: 9pt">Anna Hazare</a></li>
+					<li><a style="font-size: 9pt">Democracy</a></li>
+					<li><a style="font-size: 10pt">No Security</a></li>
+					<li><a style="font-size: 18pt">No Corruption</a></li>
+					<li><a style="font-size: 10pt">Simplicity</a></li>
+					<li><a style="font-size: 10pt">Kiran bedi</a></li>
+					<li><a style="font-size: 7pt">Chief Minister</a></li>
+					<li><a style="font-size: 10pt">AAP + INC</a></li>
+				</ul>
+				</canvas>
+				</div>
+			</div>
+		</div>
+		</div>
+</body>
+</html>

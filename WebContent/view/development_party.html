@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>		
+		<title>Development By Theme</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="../css_th/styles.css" rel="stylesheet" />
+
+	    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  		<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+ 		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+ 		<script src="../js_th/tooltip.js" type="text/javascript"></script>
+        <link href="../css_th/tooltip.css" rel="stylesheet" type="text/css" />
+      
+        
+        
+        <script type="text/javascript" src = ../js_th/jquery-ui-1.8.16.custom.min.js></script>
+        <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+         <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js_th/jQDateRangeSlider-min.js"></script>
+           <script type="text/javascript" src="../js_th/jQDateRangeSlider-withRuler-min.js"></script>
+         <link href="../css_th/iThing.css" rel="stylesheet" type="text/css" />
+        
+        
+    <link rel="stylesheet" href="../css_th/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="../js_th/jqxcore.js"></script>
+    <script type="text/javascript" src="../js_th/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../js_th/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="../js_th/jqxlistbox.js"></script>
+    <script type="text/javascript" src="../js_th/jqxdropdownlist.js"></script>
+        
+        <script type="text/javascript" src="../js_th/globalize.min.js"></script>
+        <script type="text/javascript" src="../js_th/dx.chartjs.js"></script>
+   
+    <link rel="stylesheet" type="text/css" media="all" href="../css_th/niceforms-default.css" />
+    <script type="text/javascript" src="../js_th/modernizr.custom.79639.js"></script> 
+	
+ 		 
+		
+	<style type="text/css">
+   
+  .column { float:left; padding:0 20px;}
+ 
+	
+	#eq span {
+    height:120px; float:left; margin:15px
+  }
+	
+	
+	  #div2 {
+	  
+display: none;
+width: 682px;
+top: 677px;
+position: absolute;
+height: 266px;
+background:rgb(43, 160, 182);
+border: 1px solid #000;
+  }
+	
+	</style>
+                                      
+	</head>
+	<body>
+		<script>
+		
+		$(document).ready(function(){
+			$('html').animate({scrollTop:0}, 1);
+		    $('body').animate({scrollTop:0}, 1);
+		});
+			$(function ()  
+				{
+				
+				fillwidth();
+				
+				$( "button" ).button().click (function( event, ui ) {
+					showdiv();
+						  
+					  });
+				
+				var dd = new DropDown( $('#dd') );
+
+				$(document).click(function() {
+					// all dropdowns
+					$('.wrapper-dropdown-2').removeClass('active');
+				});
+				
+			//	var dd = new DropDown( $('#dd1') );
+
+			/* 	$(document).click(function() {
+					// all dropdowns
+					$('.wrapper-dropdown-2').removeClass('active');
+				}); */
+				
+				//document.body.scrollTop = document.documentElement.scrollTop = 0;
+				
+				
+				
+			//	document.body.scrollTop = 5;
+				var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+				  $("#dateRulersExample").dateRangeSlider({
+				    bounds: {min: new Date(2014, 0, 1), max: new Date(2014, 11, 31, 12, 59, 59)},
+				    defaultValues: {min: new Date(2014, 1, 01), max: new Date(2014, 1, 30)},
+				    scales: [{
+				      first: function(value){ return value; },
+				      end: function(value) {return value; },
+				      next: function(value){
+				        var next = new Date(value);
+				        return new Date(next.setMonth(value.getMonth() + 1));
+				      },
+				      label: function(value){
+				        return months[value.getMonth()];
+				      },
+				      format: function(tickContainer, tickStart, tickEnd){
+				        tickContainer.addClass("myCustomClass");
+				      }
+				    }]
+				  });
+				
+				/*  $( "#eq > span" ).each(function() {
+				      // read initial values from markup and remove that
+				      var value = parseInt( $( this ).text(), 10 );
+				      $( this ).empty().slider({
+				        value: value,
+				        range: "min",
+				        animate: true,
+				        orientation: "vertical"
+				      });
+				    }); */
+				    
+				    
+				    $("#gaugeContainer").dxCircularGauge({
+				    	 valueIndicator: {
+				             //...
+				             color : 'red',
+				             spindleGapSize: 5
+				         },
+				    	
+				        scale: {
+				            startValue: -100,
+				            endValue: 100
+				            
+				           /*  majorTick: {
+				                color: 'black',
+				                tickInterval: 10
+				            },
+				            minorTick: {
+				                visible: true,
+				                color: 'black',
+				                tickInterval: 1
+				            } */
+				        },
+				        value: 0,
+				        
+				        rangeContainer: {
+				        	//offset: 5,
+				            ranges: [{
+				                    startValue: 0,
+				                    endValue: 50,
+				                    color: 'blue'
+				                }, {
+				                    startValue: 50,
+				                    endValue: 100,
+				                    color: 'red'
+				                }
+				            ]
+				        }  
+				    });
+				  
+				    $( "#slider" ).slider(
+				      {
+				        value:0,
+				        min: -100,
+				        max: 100,
+				        step: 5,
+				        slide: function( event, ui ) {
+				        	
+				        	 gauge = $('#gaugeContainer').dxCircularGauge('instance'),
+							  gauge.value(parseFloat(ui.value));
+				        	// showdiv();
+				        //	alert(ui.value);
+				          //alert($( "#amount" ).val( "$" + ui.value ));
+				       }
+				      });
+				    
+				    
+				    var source = [
+				                    "Law And Order",
+				                    "Education",
+				                    "Womwen Empowerment",
+				                    "Secular",
+				                    "All"
+						        ];
+				                // Create a jqxDropDownList
+				               // $("#jqxWidget").jqxDropDownList({ source: source, selectedIndex: 1, width: '110', height: '30'});
+				 
+				                
+			
+				                
+				// plotchart();
+ //$("#chartContainer").append(html);
+	});
+			
+            
+			function showdiv()
+			{
+				//alert("hi");
+				document.body.scrollTop = 1000;
+			
+				 $( "#div2" ).show( "fold", 1000 );
+				  $("#gaugeContainer1").dxCircularGauge({});
+				  $("#gaugeContainer2").dxCircularGauge({});
+				  $("#gaugeContainer3").dxCircularGauge({});
+				  gauge1 = $('#gaugeContainer1').dxCircularGauge('instance'),
+				  gauge1.value(parseFloat(10));
+				  gauge2 = $('#gaugeContainer2').dxCircularGauge('instance'),
+				  gauge2.value(parseFloat(60));
+				  gauge3 = $('#gaugeContainer3').dxCircularGauge('instance'),
+				  gauge3.value(parseFloat(30));
+				
+				 
+			}
+				
+			function DropDown(el) {
+				this.dd = el;
+				this.initEvents();
+			}
+			DropDown.prototype = {
+				initEvents : function() {
+					var obj = this;
+
+					obj.dd.on('click', function(event){
+						$(this).toggleClass('active');
+						event.stopPropagation();
+					});	
+				}
+			}
+			
+			function highlight1()
+			{
+			//	alert('hi');
+			    
+				$("#th1").css('background-color', 'aqua');
+				$("#tdr1c1").css('background-color', 'aqua');
+				$("#tdr2c1").css('background-color', 'aqua');
+				$("#tdr3c1").css('background-color', 'aqua');
+			}
+			
+			function unhighlight()
+			{
+			//	alert('hi');
+			     $( "#div2" ).hide();
+			   //  fillwidth();
+				$("#th1").css('background-color', 'white');
+				$("#tdr1c1").css('background-color', 'white');
+				$("#tdr2c1").css('background-color', 'white');
+				$("#tdr3c1").css('background-color', 'white');
+				
+				$("#th2").css('background-color', 'white');
+				$("#tdr1c2").css('background-color', 'white');
+				$("#tdr2c2").css('background-color', 'white');
+				$("#tdr3c2").css('background-color', 'white');
+
+				$("#th3").css('background-color', 'white');
+				$("#tdr1c3").css('background-color', 'white');
+				$("#tdr2c3").css('background-color', 'white');
+				$("#tdr3c3").css('background-color', 'white');
+
+				
+				$("#th4").css('background-color', 'white');
+				$("#tdr1c4").css('background-color', 'white');
+				$("#tdr2c4").css('background-color', 'white');
+				$("#tdr3c4").css('background-color', 'white');
+
+			}
+			
+			function highlight2()
+			{
+			//	alert('hi');
+			    
+				$("#th2").css('background-color', 'aqua');
+				$("#tdr1c2").css('background-color', 'aqua');
+				$("#tdr2c2").css('background-color', 'aqua');
+				$("#tdr3c2").css('background-color', 'aqua');
+			}
+			
+			
+			function highlight3()
+			{
+			//	alert('hi');
+			    
+				$("#th3").css('background-color', 'aqua');
+				$("#tdr1c3").css('background-color', 'aqua');
+				$("#tdr2c3").css('background-color', 'aqua');
+				$("#tdr3c3").css('background-color', 'aqua');
+			}
+			
+			function highlight4()
+			{
+			//	alert('hi');
+			    
+				$("#th4").css('background-color', 'aqua');
+				$("#tdr1c4").css('background-color', 'aqua');
+				$("#tdr2c4").css('background-color', 'aqua');
+				$("#tdr3c4").css('background-color', 'aqua');
+			}
+		
+			
+			function fillwidth()
+			{    
+				   // alert('hi');
+					  $("#pr1_c11").animate({
+			            height: "20px"
+			        }, 300 );
+					  
+					  $("#pr1_c12").animate({
+				            height: "45px"
+				        }, 300 );
+					
+					  $("#pr1_c13").animate({
+				            height: "35px"
+				        }, 900 );
+					
+				
+			}
+			
+			
+		</script>
+		
+		
+		<div class="content">
+			<div class="pane">
+			
+			
+				<div class="long-title"><h3>Development Index by Themes</h3></div>
+				<div id="chartContainer" style="width: 68%; height: 600px; overflow: auto; float:left">
+				  <div id="dateRulersExample" style = "float:top; width:99%;margin-top:50px"></div>
+		    		 <table class="demo-table" border="1">
+		    		 <tr>
+		    		 <th onclick="unhighlight()">Candidate</th>
+		    		 <th id = "th1" onclick="highlight1()">Education</th>
+		    		 <th id = "th2" onclick="highlight2()">Women Empowerment</th>
+		    		 <th id = "th3" onclick="highlight3()">Law And Security</th>
+		    		 <th id = "th4" onclick="highlight4()">Secular</th>
+		    		 </tr>
+		    		 
+					<tr>
+					<th><img src="../images_th/bjp.jpg" style="height:80px;width:80px"><span style=" padding-left: 35px;float: left;">&nbspBJP</span></th>
+					<td id ="tdr1c1">
+						<div id = "row1_c1" style ="height: 20px;width:100px; margin-left: 20px; display: table;">
+						<span id = "pr1_c11" style="height: 0px;width:25px; background-color: black; display: inline-block; margin-right: 5px; color: #fff;" onmouseover="tooltip.pop(this, '#sub2', {position:1,offsetX:-20, effect:'slide', sticky:true})">20%</span>
+						<span id = "pr1_c12" style="height: 0px;width:25px; background-color: red;display: inline-block; margin-right: 5px;color: #fff;" onmouseover="tooltip.pop(this, '#sub3', {position:1,offsetX:-20, effect:'slide', sticky:true})">45%</span>
+						<span id = "pr1_c13" style="height: 0px;width:25px; background-color: orange;display: inline-block; margin-right: 5px;color: #fff;" onmouseover=" tooltip.pop(this, '#sub4', {position:1,offsetX:-20, effect:'slide', sticky:true})">35%</span>
+						</div>
+					</td>
+					<td id = "tdr1c2">
+						<div id = "row1_c2" style ="height: 57px;width:100px; margin-left: 20px;display: table;">
+						<span id = "pr1_c21" style="height: 30px;width:25px; background-color: black; display: inline-block; margin-right: 5px;color: #fff;">30%</span>
+						<span id = "pr1_c22" style="height: 20px;width:25px; background-color: red;display: inline-block; margin-right: 5px;color: #fff;">20%</span>
+						<span id = "pr1_c23" style="height: 50px;width:25px; background-color: orange;display: inline-block; margin-right: 5px;color: #fff;">50%</span>
+						</div> 
+					</td>
+					<td id = "tdr1c3">
+						<div id = "row1_c3" style ="height: 57px;width:100px; margin-left: 20px;display: table;">
+						<span id = "pr1_c31" style="height: 30px;width:25px; background-color: black; display: inline-block; margin-right: 5px;color: #fff;">30%</span>
+						<span id = "pr1_c32" style="height: 50px;width:25px; background-color: red;display: inline-block; margin-right: 5px;color: #fff;">50%</span>
+						<span id = "pr1_c33" style="height: 20px;width:25px; background-color: orange;display: inline-block; margin-right: 5px;color: #fff;">20%</span>
+						</div>
+					</td>
+					<td id = "tdr1c4"> 
+						<div id = "row1_c4" style ="height: 57px;width:100px; margin-left: 20px;display: table;">
+						<span id = "pr1_c41" style="height: 30px;width:25px; background-color: black; display: inline-block; margin-right: 5px;color: #fff;">30%</span>
+						<span id = "pr1_c42" style="height: 50px;width:25px; background-color: red;display: inline-block; margin-right: 5px;color: #fff;">50%</span>
+						<span id = "pr1_c43" style="height: 20px;width:25px; background-color: orange;display: inline-block; margin-right: 5px;color: #fff;">20%</span>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+				<th><img src="../images_th/congress.jpg" style="height:80px;width:80px"><span style=" padding-left: 32px; float:left">CONGRESS</span></th>
+					<td id ="tdr2c1">
+					<div id = "row2_c1" style ="height: 20px;width:100px; margin-left: 20px;display: table;">
+					<span id = "pr2_c11" style="height: 20px;width:25px; background-color: black; display: inline-block; margin-right: 5px; color: #fff">20%</span>
+					<span id = "pr2_c12" style="height: 40px;width:25px; background-color: red;display: inline-block; margin-right: 5px; color: #fff">40%</span>
+					<span id = "pr2_c13" style="height: 40px;width:25px; background-color: orange;display: inline-block; margin-right: 5px; color: #fff">40%</span>
+					</div>
+					</td>
+					<td id = "tdr2c2">
+					<div id = "row2_c2" style ="height: 57px;width:100px; margin-left: 20px; display: table;">
+					<span id = "pr2_c21" style="height: 15px;width:25px; background-color: black; display: inline-block; margin-right: 5px; color: #fff">15%</span>
+					<span id = "pr2_c22" style="height: 25px;width:25px; background-color: red;display: inline-block; margin-right: 5px; color: #fff">25%</span>
+					<span id = "pr2_c23" style="height: 60px;width:25px; background-color: orange;display: inline-block; margin-right: 5px; color: #fff">60%</span>
+					</div>
+					</td>
+					<td id = "tdr2c3">
+					<div id = "row2_c3" style ="height: 57px;width:100px; margin-left: 20px; display: table;">
+					<span id = "pr2_c31" style="height: 30px;width:25px; background-color: black; display: inline-block; margin-right: 5px; color: #fff">30%</span>
+					<span id = "pr2_c32" style="height: 50px;width:25px; background-color: red;display: inline-block; margin-right: 5px; color: #fff">50%</span>
+					<span id = "pr2_c33" style="height: 20px;width:25px; background-color: orange;display: inline-block; margin-right: 5px; color: #fff">20%</span>
+					</div>
+					</td>
+					<td id = "tdr2c4">
+					<div id = "row2_c4" style ="height: 57px;width:100px; margin-left: 20px; display: table;">
+					<span id = "pr2_c41" style="height: 30px;width:25px; background-color: black; display: inline-block; margin-right: 5px; color: #fff">30%</span>
+					<span id = "pr2_c42" style="height: 50px;width:25px; background-color: red;display: inline-block; margin-right: 5px; color: #fff">50%</span>
+					<span id = "pr2_c43" style="height: 20px;width:25px; background-color: orange;display: inline-block; margin-right: 5px; color: #fff">20%</span>
+					</div>
+					</td>
+				</tr>
+
+				<tr>
+				<th><img src="../images_th/aidmk.jpg" style="height:80px;width:80px"><span style=" padding-left: 35px;float: left;">AIDMK</span></th>
+					<td id ="tdr3c1">
+					<div id = "row3_c1" style ="height: 20px;width:100px; margin-left: 20px; display: table;">
+					<span id = "pr3_c11" style="height: 20px;width:25px; background-color: black; display: inline-block; margin-right: 5px; color: #fff">20%</span>
+					<span id = "pr3_c12" style="height: 40px;width:25px; background-color: red;display: inline-block; margin-right: 5px; color: #fff">40%</span>
+					<span id = "pr3_c13" style="height: 40px;width:25px; background-color: orange;display: inline-block; margin-right: 5px; color: #fff">40%</span>
+					</div>
+					</td>
+					<td id = "tdr3c2">
+					<div id = "row3_c2" style ="height: 76px;width:100px; margin-left: 20px;">
+					<span id = "pr3_c21" style="height: 15px;width:25px; background-color: black; display: inline-block; margin-right: 5px; color: #fff">15%</span>
+					<span id = "pr3_c22" style="height: 30px;width:25px; background-color: red;display: inline-block; margin-right: 5px; color: #fff">30%</span>
+					<span id = "pr3_c23" style="height: 55px;width:25px; background-color: orange;display: inline-block; margin-right: 5px; color: #fff">55%</span>
+					</div>
+					</td>
+					<td id = "tdr3c3">
+					<div id = "row3_c3" style ="height: 57px;width:100px; margin-left:20px">
+					<span id = "pr3_c31" style="height: 30px;width:25px; background-color: black; display: inline-block; margin-right: 5px;color: #fff">30%</span>
+					<span id = "pr3_c32" style="height: 50px;width:25px; background-color: red;display: inline-block; margin-right: 5px;color: #fff">50%</span>
+					<span id = "pr3_c33" style="height: 20px;width:25px; background-color: orange;display: inline-block; margin-right: 5px;color: #fff">20%</span>
+					</div>
+					</td>
+					<td id = "tdr3c4">
+					<div id = "row3_c4" style ="height: 57px;width:100px; margin-left:20px">
+					<span id = "pr3_c41" style="height: 30px;width:25px; color: #fff;background-color: black; display: inline-block; margin-right: 5px;color: #fff">30%</span>
+					<span id = "pr3_c42" style="height: 50px;width:25px; color: #fff;background-color: red;display: inline-block; margin-right: 5px;color: #fff">50%</span>
+					<span id = "pr3_c43" style="height: 20px;width:25px; color: #fff;background-color: orange;display: inline-block; margin-right: 5px;color: #fff">20%</span>
+					</div>
+					</td>
+				</tr>
+		</table>
+		<div id = "bt_group1" style ="position:absolute;top:587px;left:330px;display: flex; border: 2px solid black">
+	 <div id = "b11" style="color: #fff;background-color:black;width:45px;height:20px;">Positive</div>
+	 <div id = "b21" style="color: #fff;background-color:red;width:45px;height:20px">Neutral</div>
+	 <div id = "b31" style="color: #fff;background-color:orange;width:48px;height:20px;">Negative</div>
+	</div>
+	
+
+
+			
+
+		
+	</div>
+	
+	<!--  <div id = "bt_group" style ="border-top-right-radius: 8px;;position:absolute;top:182px;left:940px;display: flex; border: 1px solid black;border-top-left-radius: 8px;">
+	 <div id = "b1" style="background-color:rgb(231, 212, 228);width:45px;height:30px;border-top-left-radius: 8px;">Positive</div>
+	 <div id = "b2" style="background-color:rgb(103, 214, 161);width:45px;height:30px">Neutral</div>
+	 <div id = "b3" style="background-color:yellow;width:48px;height:30px;border-top-right-radius: 8px">Negative</div>
+	</div> -->
+	 
+	 <div id="gaugeContainer" style="height:200px;width:24%;top: 177px;left: 731px;position: absolute">
+	 <h3>Select the Percentage Level For Postive, Negative or Neutral score after selecting the vertical column on table</h3></div>
+	 <div id="slider" style="position: absolute;width: 94px;top: 442px;left: 805px;"></div>
+	 <button style="position: absolute;top: 487px;left: 780px;">Calculate Forecast</button>
+	 
+	 
+			<!-- 
+				<div class="wrapper-demo">
+					<div id="dd" class="wrapper-dropdown-2" tabindex="1">Select Category
+						<ul class="dropdown">
+							<li style="background: darkseagreen;"><a href="#"><i class="icon-twitter icon-large"></i>Education</a></li>
+							<li style="background: aqua;"><a href="#"><i class="icon-github icon-large"></i>Women Empowermenr</a></li>
+							<li style="background: darkseagreen;"><a href="#"><i class="icon-facebook icon-large"></i>Secular</a></li>
+						</ul>
+					</div>
+				</div> -->
+				
+				
+	
+
+<div id="div2">
+    		<fieldset>
+    		<legend>Forecasted Best Fit</legend>
+    		<div id="gaugeContainer1" style="height:150px;width:24%;left: 49px;top:87px;position:absolute"></div>
+    	    <div id="gaugeContainer2" style="height:150px;width:24%;left: 275px;top:87px;position:absolute"></div>
+    	    <div id="gaugeContainer3" style="height:150px;width:24%;left: 495px;top:87px;position:absolute"></div>
+   				<dl><dt style="margin-left: 35px;">Rahul Gandhi</dt><dd style="margin-left: 35px;">30%</dd></dl>
+   				<dl><dt>Narendra Modi</dt><dd>60%</dd></dl>
+   				<dl><dt>Sonia Gandhi</dt><dd>10%</dd></dl>
+ 			   </fieldset>
+ 	        </div>
+
+</div>
+	
+		
+	
+	
+	 <div style="display:none;">
+		 <div id="sub2">
+            <div class="column" style = "padding-right: 10px;">
+                <b>Women Empowerment- Social Media</b><br />              
+                <a href="http://indiatoday.intoday.in/story/rahul-gandhi-meets-tribals-in-ranchi/1/342404.html">Educating Tribal People</a><br />
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">UPA has made Delhi a Education Hub</a><br/>
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">5 New Universities in Delhi</a><br/>
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">30000 Education Seats for Youths in Delhi </a><br />
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">Youth Education in Rise since last 10 Years</a><br />
+                <a href="http://vimeo.com/83661047">Improve Transport Near Education Institution</a><br/>
+                
+            </div>
+            
+ 			<div class="column" style="margin-top: 24px;margin-right: 50px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1>65%</h1> </div>
+             <div class="column" style ="padding-right: 10px;padding-top:38px">
+                <b>Women Empowerment- Real Development</b><br />              
+                
+            </div>
+            <div class="column" style="margin-top: 63px;margin-right: 10px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1 >0%</h1>
+            
+            </div>
+            
+           
+        </div>
+        
+         <div id="sub3">
+            <div class="column" style = "padding-right: 10px;">
+                <b>Women Empowerment- Social Media</b><br />              
+                <a href="http://indiatoday.intoday.in/story/rahul-gandhi-meets-tribals-in-ranchi/1/342404.html">Educating Tribal People</a><br />
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">UPA has made Delhi a Education Hub</a><br/>
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">5 New Universities in Delhi</a><br/>
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">30000 Education Seats for Youths in Delhi </a><br />
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">Youth Education in Rise since last 10 Years</a><br />
+                <a href="http://vimeo.com/83661047">Improve Transport Near Education Institution</a><br/>
+                
+            </div>
+            
+ 			<div class="column" style="margin-top: 24px;margin-right: 50px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1>65%</h1> </div>
+             <div class="column" style ="padding-right: 10px;padding-top:38px">
+                <b>Women Empowerment- Real Development</b><br />              
+                
+            </div>
+            <div class="column" style="margin-top: 63px;margin-right: 10px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1 >0%</h1>
+            
+            </div>
+            
+           
+        </div>
+        
+         <div id="sub4">
+            <div class="column" style = "padding-right: 10px;">
+                <b>Women Empowerment- Social Media</b><br />              
+                <a href="http://indiatoday.intoday.in/story/rahul-gandhi-meets-tribals-in-ranchi/1/342404.html">Educating Tribal People</a><br />
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">UPA has made Delhi a Education Hub</a><br/>
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">5 New Universities in Delhi</a><br/>
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">30000 Education Seats for Youths in Delhi </a><br />
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">Youth Education in Rise since last 10 Years</a><br />
+                <a href="http://vimeo.com/83661047">Improve Transport Near Education Institution</a><br/>
+                
+            </div>
+            
+ 			<div class="column" style="margin-top: 24px;margin-right: 50px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1>65%</h1> </div>
+             <div class="column" style ="padding-right: 10px;padding-top:38px">
+                <b>Women Empowerment- Real Development</b><br />              
+                
+            </div>
+            <div class="column" style="margin-top: 63px;margin-right: 10px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1 >0%</h1>
+            
+            </div>
+            
+           
+        </div>
+        
+         <div id="sub5">
+            <div class="column" style = "padding-right: 10px;">
+                <b>Women Empowerment- Social Media</b><br />              
+                <a href="http://indiatoday.intoday.in/story/rahul-gandhi-meets-tribals-in-ranchi/1/342404.html">Educating Tribal People</a><br />
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">UPA has made Delhi a Education Hub</a><br/>
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">5 New Universities in Delhi</a><br/>
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">30000 Education Seats for Youths in Delhi </a><br />
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">Youth Education in Rise since last 10 Years</a><br />
+                <a href="http://vimeo.com/83661047">Improve Transport Near Education Institution</a><br/>
+                
+            </div>
+            
+ 			<div class="column" style="margin-top: 24px;margin-right: 50px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1>65%</h1> </div>
+             <div class="column" style ="padding-right: 10px;padding-top:38px">
+                <b>Women Empowerment- Real Development</b><br />              
+                
+            </div>
+            <div class="column" style="margin-top: 63px;margin-right: 10px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1 >0%</h1>
+            
+            </div>
+            
+           
+        </div>
+        
+         <div id="sub6">
+            <div class="column" style = "padding-right: 10px;">
+                <b>Women Empowerment- Social Media</b><br />              
+                <a href="http://indiatoday.intoday.in/story/rahul-gandhi-meets-tribals-in-ranchi/1/342404.html">Educating Tribal People</a><br />
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">UPA has made Delhi a Education Hub</a><br/>
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">5 New Universities in Delhi</a><br/>
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">30000 Education Seats for Youths in Delhi </a><br />
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">Youth Education in Rise since last 10 Years</a><br />
+                <a href="http://vimeo.com/83661047">Improve Transport Near Education Institution</a><br/>
+                
+            </div>
+            
+ 			<div class="column" style="margin-top: 24px;margin-right: 50px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1>65%</h1> </div>
+             <div class="column" style ="padding-right: 10px;padding-top:38px">
+                <b>Women Empowerment- Real Development</b><br />              
+                
+            </div>
+            <div class="column" style="margin-top: 63px;margin-right: 10px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1 >0%</h1>
+            
+            </div>
+            
+           
+        </div>
+        
+         <div id="sub7">
+            <div class="column" style = "padding-right: 10px;">
+                <b>Women Empowerment- Social Media</b><br />              
+                <a href="http://indiatoday.intoday.in/story/rahul-gandhi-meets-tribals-in-ranchi/1/342404.html">Educating Tribal People</a><br />
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">UPA has made Delhi a Education Hub</a><br/>
+                <a href="http://www.liveleak.com/view?i=2a2_1386928964">5 New Universities in Delhi</a><br/>
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">30000 Education Seats for Youths in Delhi </a><br />
+                <a href="http://www.dailymotion.com/video/x19al9f_rahul-gandhi-we-have-worked-for-youth-and-their-education_news">Youth Education in Rise since last 10 Years</a><br />
+                <a href="http://vimeo.com/83661047">Improve Transport Near Education Institution</a><br/>
+                
+            </div>
+            
+ 			<div class="column" style="margin-top: 24px;margin-right: 50px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1>65%</h1> </div>
+             <div class="column" style ="padding-right: 10px;padding-top:38px">
+                <b>Women Empowerment- Real Development</b><br />              
+                
+            </div>
+            <div class="column" style="margin-top: 63px;margin-right: 10px;border-radius: 20px;background: chartreuse;width: 68px;height: 57px;padding-top: 15px;">
+            <h1 >0%</h1>
+            
+            </div>
+            
+           
+        </div>
+        
+        </div>
+	</body>
+</html>

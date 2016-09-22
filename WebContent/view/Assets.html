@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" id="india60-loksabha">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+
+
+
+<!-- CSS -->
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link href="../css_th/style1.css" rel="stylesheet" />
+
+<script src="http://www.google.com/jsapi"></script>
+<script>
+ google.load("jquery", "1.7.1");
+ // var baseurl = 'http://india60.com/mps';
+ </script>
+<script src="../js_th/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="../js_th/mps.js" type="text/javascript"></script>
+<script src="../js_th/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="http://code.highcharts.com/modules/data.js"></script>
+<script src="http://code.highcharts.com/modules/drilldown.js"></script>
+
+<script src="../js_th/tooltip.js" type="text/javascript"></script>
+<link href="../css_th/tooltip1.css" rel="stylesheet" type="text/css" />
+
+
+<script>
+$(function () {
+	
+	$("#image1").hover(
+            function(event) {
+                    $(this).animate({
+                          height : '115px',
+                          width  : '115px'
+                   }); 
+                   $(this)
+                   .css(
+                                 {
+                                        "-webkit-box-shadow" : " 0px 0px 12px rgba(0, 0, 0, 0.5)"
+                                 });
+
+            },
+            function() {
+                   $(this).stop(true, true);
+                    $(this).animate({
+                          height : '100px',
+                          width  : '100px'
+                   }); 
+                   $(this)
+                   .css(
+                                 {
+                                        "-webkit-box-shadow" : " 0px 0px 0px rgba(0, 0, 0, 0)"
+                                 });
+
+            });
+	
+	
+	$("#image2").hover(
+            function(event) {
+                    $(this).animate({
+                          height : '115px',
+                          width  : '115px'
+                   }); 
+                   $(this)
+                   .css(
+                                 {
+                                        "-webkit-box-shadow" : " 0px 0px 12px rgba(0, 0, 0, 0.5)"
+                                 });
+
+            },
+            function() {
+                   $(this).stop(true, true);
+                    $(this).animate({
+                          height : '100px',
+                          width  : '100px'
+                   }); 
+                   $(this)
+                   .css(
+                                 {
+                                        "-webkit-box-shadow" : " 0px 0px 0px rgba(0, 0, 0, 0)"
+                                 });
+
+            });
+
+	
+	$("#image3").hover(
+            function(event) {
+                    $(this).animate({
+                          height : '115px',
+                          width  : '115px'
+                   }); 
+                   $(this)
+                   .css(
+                                 {
+                                        "-webkit-box-shadow" : " 0px 0px 12px rgba(0, 0, 0, 0.5)"
+                                 });
+
+            },
+            function() {
+                   $(this).stop(true, true);
+                    $(this).animate({
+                          height : '100px',
+                          width  : '100px'
+                   }); 
+                   $(this)
+                   .css(
+                                 {
+                                        "-webkit-box-shadow" : " 0px 0px 0px rgba(0, 0, 0, 0)"
+                                 });
+
+            });
+
+
+	
+	
+	
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Asset Declared vs Market Valuation'
+        },
+        subtitle: {
+            text: 'Source: Election Watch'
+        },
+        xAxis: {
+            categories: [
+                'BJP',
+                'Congress',
+                'RJD'
+            ]
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Assets Value (cores)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Declared',
+            data: [160, 180, 156]
+
+        }, {
+            name: 'Actuals',
+            data: [380, 270, 315]
+
+        }, ]
+    });
+    
+    
+    $('#container1').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Asset Analysis - Lok Sabha'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+                'No Of Corepatis',
+                'Average Assets of MP',
+                'No of Female Corepatis'
+            ]
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: ''
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '2004',
+            data: [156, 186.3, 8]
+
+        }, {
+            name: '2009',
+            data: [315, 456.62, 16]
+
+        }, ]
+    });
+    
+//chart2
+/*     Highcharts.data({
+        csv: document.getElementById('tsv').innerHTML,
+        itemDelimiter: '\t',
+        parsed: function (columns) {
+
+            var brands = {},
+                brandsData = [],
+                versions = {},
+                drilldownSeries = [];
+            
+            // Parse percentage strings
+            columns[1] = $.map(columns[1], function (value) {
+                if (value.indexOf('%') === value.length - 1) {
+                    value = parseFloat(value);
+                }
+                return value;
+            });
+
+            $.each(columns[0], function (i, name) {
+                var brand,
+                    version;
+
+                if (i > 0) {
+
+                    // Remove special edition notes
+                    name = name.split(' -')[0];
+
+                    // Split into brand and version
+                    version = name.match(/([0-9]+[\.0-9x]*)/);
+                    if (version) {
+                        version = version[0];
+                    }
+                    brand = name.replace(version, '');
+
+                    // Create the main data
+                    if (!brands[brand]) {
+                        brands[brand] = columns[1][i];
+                    } else {
+                        brands[brand] += columns[1][i];
+                    }
+
+                    // Create the version data
+                    if (version !== null) {
+                        if (!versions[brand]) {
+                            versions[brand] = [];
+                        }
+                        versions[brand].push(['v' + version, columns[1][i]]);
+                    }
+                }
+                
+            });
+
+            $.each(brands, function (name, y) {
+                brandsData.push({ 
+                    name: name, 
+                    y: y,
+                    drilldown: versions[name] ? name : null
+                });
+            });
+            $.each(versions, function (key, value) {
+                drilldownSeries.push({
+                    name: key,
+                    id: key,
+                    data: value
+                });
+            }); */
+
+         /*    var brandsData = [{"name":"Bharatiya Janta<br> Party","y":244.57,"drilldown":"BJP"},{"name":"Congress","y":487.35,"drilldown":"Congress"},{"name":"RJD","y":85.40,"drilldown":"RJD"},{"name":"AIDMK","y":221.41,"drilldown":"AIDMK"}];
+            var drilldownSeries = [{"name":"BJP","id":"BJP","data":[ ["Male",10],["Female",30],["Serious Crime",20] ] },{"name":"Congress","id":"Congress","data":[ ["Male",5],["Female",5],["Serious Crime",10] ] }];
+              
+            // Create the chart
+            $('#container1').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Asset Analysis - Party Wise'
+                },
+                subtitle: {
+                    text: 'Click the columns to view versions.'
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average Assets(In Crores)'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.y:.1f}%'
+                        }
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+                }, 
+
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+                    data: brandsData
+                }],
+                drilldown: {
+                    series: drilldownSeries
+                }
+            }) */
+
+   /*      }
+    }); */
+    
+    //chart 3
+    $('#container2').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Asset Analysis- Party View'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['Congress', 'BJP', 'SP', 'RJD', 'NCP'],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Asset(Crores)',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: 'members'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: '#FFFFFF',
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Total Candidates',
+            data: [428, 438, 192, 44, 68]
+        }, {
+            name: 'Corepatis Candidates',
+            data: [200, 275, 63, 12, 32]
+        }]
+    });
+    
+    //chart 4
+            var brandsData = [{"name":"Karnataka","y":15,"drilldown":"Karnataka"},{"name":"Tamil Nadu","y":5,"drilldown":"Tamil Nadu"},{"name":"AP","y":25,"drilldown":"AP"},{"name":"UP","y":15,"drilldown":"UP"},{"name":"NCR","y":5,"drilldown":"NCR"},{"name":"Haryana","y":5,"drilldown":"Haryana"},{"name":"Punjab","y":20,"drilldown":"Punjab"},{"name":"Maharastra","y":10,"drilldown":"Maharastra"}];
+            var drilldownSeries = [{"name":"Karnataka","id":"Karnataka","data":[ ["Male",10],["Female",30],["Serious Crime",20] ] },{"name":"Congress","id":"Congress","data":[ ["Male",5],["Female",5],["Serious Crime",10] ] }];
+              
+            // Create the chart
+            $('#container3').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Asset Analysis - Party Wise'
+                },
+                subtitle: {
+                    text: 'Click the columns to view versions.'
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average Assets(In Crores)'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.y:.1f}%'
+                        }
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+                }, 
+
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+                    data: brandsData
+                }],
+                drilldown: {
+                    series: drilldownSeries
+                }
+            }); 
+
+});
+
+function increasesize1()
+{
+	 $("#image1").width( '115px' );
+	 $("#image1").height( '115px' );
+	 
+	 $("#image1").css({"-webkit-box-shadow": "0px 0px 12px rgba(0, 0, 0, 0.5)"});
+	
+	 
+	 
+	 
+	 
+	 
+	}
+	
+	
+	
+
+	
+	
+	
+	
+
+</script>
+
+
+</head>
+
+<body >
+    
+    
+    <div id="content" class="clearfix">
+        <div class="colfull">
+            <div class="listtitle clearfix">
+                <h1>Wealth Score: 3</h1>
+                <h2>Total Wealth Value 54 Cores</h2>
+            
+            </div>
+            
+            <table class="fulltable" style="height: 200px;">
+                <thead>
+                    <tr>
+                        <th colspan="3"></th>
+                        <th class="colspacer"></th>
+                        <th colspan="5" class="colcenter valblue">Assets</th>                        
+                        <th class="colspacer"></th>
+                        <th colspan="2" class="colcenter valorange">Liabilities</th>
+                    </tr>
+                    <tr>
+                        <th style="width: 50px;"></th>
+                        <th>Name</th>
+                        <th class="colright"><a href="http://india60.com/mps/wealth?sort=ftotal">Wealth</th>
+                        <th class="colspacer"></th>
+                        <th class="colright valblue"><a href="http://india60.com/mps/wealth?sort=fcash">Cash</a></th>
+                        <th title="Property" class="colright valblue"><a href="http://india60.com/mps/wealth?sort=fproperty">Prop</a></th>
+                        <th title="Investment" class="colright valblue"><a href="http://india60.com/mps/wealth?sort=finvestment">Inv</a></th>
+                        <th title="Jewellery" class="colright valblue"><a href="http://india60.com/mps/wealth?sort=fjewellery">Jwl</a></th>
+                        <th class="colright valblue"><a href="http://india60.com/mps/wealth?sort=fother">Other</a></th>
+                        <th class="colspacer"></th>
+                        <th class="colright valorange"><a href="http://india60.com/mps/wealth?sort=floan">Loan</a></th>
+                        <th class="colright valorange"><a href="http://india60.com/mps/wealth?sort=flother">Other</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td><img src='../images_th/bjp.jpg' width='48' height='48' alt='' onmouseover="tooltip.pop(this, '#sub4', {position:1,offsetX:-20, effect:'slide', sticky:true})"></td>
+                    <th style='width:auto;'>
+                                        <ul class='mpinfo'>
+                                            <li class='name' style='font-size: 18px;'><span class='rowindex'></span>&nbsp;<a href='http://india60.com/mps/profile/nama-nageswara-rao'>BJP <br>&nbsp</a></li>
+                                            <li class='constituency sp' style='clear:both; float:left;' title='constituency'>Head Office<br><a href='http://india60.com/mps/list.php?filter=state:Andhra+Pradesh'>Delhi</a>  <a title='Bharatiya Janta Party' href='http://india60.com/mps/list.php?filter=party:TDP'></a></li>
+                                        </ul>
+                                 </th>
+                                 <td data-title='Wealth' class='showBubble colright colhi  valplus'>1,740,998,133</td>
+                                 <td class='colspacer'></td><td data-title='Cash' class='showBubble colright colsmall valblue'>16,028,000</td>
+                                 <td data-title='Property' class='showBubble colright colsmall valblue'>324,641,855</td>
+                                 <td data-title='Investment' class='showBubble colright colsmall valblue'>1,226,712,472</td>
+                                 <td data-title='Jewellery' class='showBubble colright colsmall valblue'>3,078,690</td>
+                                 <td data-title='Other' class='showBubble colright colsmall valblue'>170,537,116</td>
+                                 <td class='colspacer'></td>
+                                 <td data-title='Loan' class='showBubble colright colsmall valorange'>0</td>
+                                 <td data-title='Other' class='showBubble colright colsmall valorange'>0</td>
+                                 </tr>
+                                 
+                            </tbody>
+            </table>
+            
+          </div>
+           <div class="listtitle clearfix" style="margin-top: 50px;">
+                <h1>Parties Analysis</h1>
+                <h2></h2>
+            
+            </div>
+            <div id="container" style="border:  1px solid #A427CC;  float:left;width: 485px; height: 300px"></div>
+            <div id="container1" style="margin-left: 20px;border: 1px solid #A427CC; float:left;width: 445px; height: 300px;"></div>
+            <div id="container2" style="border: 1px solid #A427CC; float: left;margin-top: 28px; width: 485px; height: 400px;"></div>
+            <div id="container3" style="margin-left: 20px;border: 1px solid #A427CC; float: left;margin-top: 28px; width: 445px; height: 400px;"></div>
+             
+               
+    </div>
+    
+     <div style="display:none;">
+    <div id="sub4">
+    <h1 style="padding-bottom: 10px;margin-top: -15px;">Wealth Comparison Analysis</h1>
+           <div class="column">
+           <div id = "compare1" style = "float:left;height:150px;width:150px"> 
+           		<img id = "image1" style ="height:100px;width:100px" alt="" src="../images_th/congress.jpg" >
+           		<h1>Rank 3</h1>
+           		<h3>Wealth 80 cores</h3>
+           
+           </div>
+           
+           <div id = "compare2" style = "float:left;height:150px;width:150px"> 
+           		<img id = "image2" style ="height:100px;width:100px" alt="" src="../images_th/SP.jpg">
+           		<h1>Rank 3</h1>
+           		<h3>Wealth 90 cores</h3>
+           
+           </div>
+           
+              <div id = "compare3" style = "float:left;height:150px;width:150px"> 
+           		<img id = "image3" style ="height:100px;width:100px" alt="" src="../images_th/rjd.jpg">
+           		<h1>Rank 10</h1>
+           		<h3>Wealth 54 cores</h3>
+           
+           </div>
+               
+                
+            </div>
+         </div>    
+         </div>    
+    
+    <script type="text/javascript" charset="utf-8">
+        initBubble();    
+    </script>
+
+</body>
+</html>

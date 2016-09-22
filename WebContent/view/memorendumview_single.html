@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Memorendum</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link href="../css_phani/styles.css" rel="stylesheet" />
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
+<script src="../js_phani/knockout-3.0.0.js"></script>
+<script src="../js_phani/globalize.min.js"></script>
+<script src="../js_phani/dx.chartjs.js"></script>
+
+
+
+<script>
+
+$(function ()  
+				{
+$('#chartContainer1').dxCircularGauge({
+	scale: {
+		startValue: 0,
+		endValue: 100,
+		majorTick: {
+			tickInterval: 10
+		},
+		label: {
+			customizeText: function (arg) {
+				return arg.valueText + ' %';
+			}
+		}
+	},
+	rangeContainer: {
+		ranges: [
+			{ startValue: 0, endValue: 20, color: '#CE2029' },
+			{ startValue: 20, endValue: 50, color: '#FFD700' },
+			{ startValue: 50, endValue: 100, color: '#228B22' }
+		]
+	},
+	title: {
+		text: 'Positive wave',
+		font: { size: 28 }
+	},
+	value: 45
+});
+$("#dynamic_div").show( "fold", 1000);
+}
+);
+			
+			
+function changevalue() {	
+	var guage1;
+	gauge1 = $('#chartContainer1').dxCircularGauge('instance'),
+    gauge1.value(parseFloat(70));	
+
+	$("#dynamic_div").show( "fold", 1000);
+	
+	} 
+		
+function hideDiv() {
+		$("#dynamic_div").hide();	
+}
+ 
+ </script>
+
+
+</head>
+
+
+
+<body >
+	<div id="wrap">
+		<div id="left_container">
+			<div id="poli_container">
+			
+			<div style="width: 100%; height: 30%">
+			<div class="content">
+			<div class="guagePanel_for_single_view">
+				
+				<div id="chartContainer1" ></div>
+				<div class="credits"></div>
+			</div>
+		
+		</div>
+			</div>	
+			</div>
+		</div>
+		<div id="right_container">
+			<div id="video_analysis_for_single" >
+				
+				<div id="dynamic_div">
+				
+				<div id="container1">
+				<div class="textDis"> Acheivements by Narendra Modi </div>
+				<table border="0" width="100%">
+					  <col width="80%">
+					  <col width="10%">
+					  <col width="10%" >
+						<tr>
+							<th>Points</th>
+							<th>Percentage</th>
+							<th>Status</th>
+						</tr>
+						<tr>
+							<td>Gujrath state has reduced poverty and malnutrition</td>
+							<td>100%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgStyle"></td>
+						</tr>
+						<tr>
+							<td>Gujarath is one of the major Contributor in pharmaceutical field it contributes around 35% of the total products</td>
+							<td>80%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgStyle"></td>
+						</tr>
+						<tr>
+							<td>Electricity for all:  Nearly 100% of Gujrath's 18,000 villages have 24hr power</td>
+							<td>80%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgThumbsDown"></td>  
+						</tr>
+						<tr>
+							<td>Gujrath Contributes 22% of India’s exports</td>
+							<td>80%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgThumbsDown"></td> 
+						</tr>
+						
+						<tr>
+							<td>24% of the textile production happens in Gujrath</td>
+							<td>80%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgThumbsDown"></td> 
+						</tr>
+						
+						<tr>
+							<td>Will take Education to greater heights</td>
+							<td>40%</td>
+							<td><img src="../img_phani/thumbsdown.png" class="imgThumbsDown"></td> 
+						</tr>
+						
+				</table>
+				
+				
+				</div>
+				</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

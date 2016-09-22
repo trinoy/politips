@@ -1,0 +1,427 @@
+#amazing_video {
+	position: absolute;
+width: 48%;
+height: 31%;
+border: 1px solid #ccc;
+top: 3px;
+left: 3px;
+overflow: hidden;
+}
+
+#gauge_container {
+	position: absolute;
+width: 22%;
+height: 31%;
+border: 1px solid #ccc;
+top: 3px;
+left: 50.7%;
+}
+#gauge1{
+width: 220px;
+height: 180px;
+
+display: inline-block;
+margin: 10px;
+
+	
+}
+
+::-webkit-scrollbar {
+width: 8px;
+height: 1px;
+}
+
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0px 0px 2px rgba(255, 255, 255, 0.5);
+background-color: #D3D3D3;
+border: 1px solid #BFBFBF;
+cursor: pointer;
+
+
+}
+::-webkit-scrollbar-track {
+background-color: transparent;
+border-radius: 10px;
+z-index: 1000;
+cursor: pointer;
+width: 10px;
+}
+
+.t_tweet {
+	position: absolute;
+width: 96%;
+height: 50%;
+margin: 2%;
+top: 30%;
+font-family: Verdana, Geneva, sans-serif;
+font-size: 14px;
+}
+
+.t_date {
+position: relative;
+width: 50%;
+height: 10%;
+margin: 2%;
+font-family: Verdana, Geneva, sans-serif;
+color: #0266C8;
+font-weight: bold;
+font-size: 14px;
+}
+
+.comment_prof {
+	position: absolute;
+	width: 80%;
+	margin: 1%;
+	left: 17%;
+	min-height: 60%;
+	top: 26%;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+}
+
+.limg,.dlimg {
+	position: relative;
+	width: 75%;
+	height: 75%;
+	top: 10%;
+}
+
+.name_prof {
+	position: absolute;
+	height: 25%;
+	margin: 1%;
+	text-align: left;
+	color: #0266C8;
+	left: 17%;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.comment_like {
+	display: inline-block;
+position: absolute;
+height: 30%;
+width: 11%;
+left: 81%;
+top: 0%;
+}
+.dl_info{
+	position: relative;
+	
+width: 100%;
+height: 100%;
+display: inline-block;
+top: 35%;
+font-family: sans-serif;
+font-weight: bold;
+
+}
+.like_info{
+position: absolute;
+width: 40%;
+left: 5%;
+display: inline-block;
+color: #5ACB5A;
+}
+.dlike_info{
+display: inline-block;
+position: absolute;
+width: 40%;
+left: 64%;
+color: #FF7563;
+}
+#t_container {
+	
+display: inline-block;
+position: absolute;
+width: 100%;
+height: 100%;
+left: 0%;
+border: 1px solid #ccc;
+top: 0%;
+
+}
+
+#v_container {
+	display: inline-block;
+position: absolute;
+width: 24.5%;
+height: 31%;
+left: 74%;
+border: 1px solid #ccc;
+top: 3px;
+}
+
+#info {
+	position: relative;
+	min-height: 50px;
+	resize: both;
+	overflow: auto;
+}
+
+#celebrity {
+	display: inline-block;
+width: 48%;
+height: 40%;
+top: 35%;
+left: 3px;
+border: 1px solid #ccc;
+position: absolute;
+}
+
+#v_header, #gauge_header {
+	height: 9%;
+	text-align: center;
+	font-size: 160%;
+	width: 100%;
+	color: white;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(47%, #45484d),
+		color-stop(100%, #000000));
+	position: relative;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(47%, #45484d),
+		color-stop(100%, #000000));
+	width: 100%;
+}
+
+#celebrity_header,#tweet_header {
+	text-align: center;
+font-size: 140%;
+color: white;
+position: relative;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(47%, #45484d),
+ color-stop(100%, #000000));
+width: 100%;
+height: 9%
+}
+
+#celebrity_container,#v_comments_cont,#t_comments_cont {
+	overflow: auto;
+	position: relative;
+	width: 100%;
+	height: 91.5%;
+}
+
+.celebrity_col {
+	position: relative;
+	width: 98%;
+	height: 45%;
+	margin: 2%;
+}
+
+.comments_prof {
+	border: 1px solid #ccc;
+	position: relative;
+	width: 97%;
+	min-height: 31.5%;
+	margin: 1%;
+	left: 0.3%;
+	top: 0.5%;
+	overflow: auto;
+}
+
+.t_comments_prof {
+	border: 1px solid #ccc;
+position: relative;
+width: 97%;
+min-height: 30%;
+margin: 1%;
+left: 0.3%;
+top: 0.5%;
+overflow: auto;
+}
+
+.prof_pic {
+	position: absolute;
+	width: 15%;
+	height: 70%;
+	background: #ccc;
+	margin: 1%;
+}
+
+.prof_img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.celebrity_outer_img {
+	position: absolute;
+	width: 25%;
+	height: 85%;
+	margin: 2%;
+	-webkit-border-radius: 50%;
+	border: 1px solid #ccc;
+	background: #F0F8FF;
+}
+
+.celebrity_img {
+	position: relative;
+	width: 97%;
+	height: 97%;
+	margin: 0%;
+	left: 1%;
+	top: 1%;
+	-webkit-border-radius: 50%;
+	border: 1px solid #ccc;
+}
+
+.celebrity_details {
+	border-left-style: none;
+	position: absolute;
+	width: 55%;
+	height: 27%;
+	top: 29%;
+	left: 23%;
+	-webkit-border-radius: 18px;
+	border: 1px solid #ccc;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffb76b),
+		color-stop(50%, #ffa73d), color-stop(70%, #ff7c00),
+		color-stop(100%, #ff7f04));
+}
+
+.celebrity_outer_img_even {
+	position: absolute;
+	width: 25%;
+	height: 85%;
+	margin: 2%;
+	right: 0%;
+	-webkit-border-radius: 50%;
+	border: 1px solid #ccc;
+	background: #F0F8FF;
+}
+
+.celebrity_img_even {
+	position: relative;
+	width: 97%;
+	height: 97%;
+	margin: 0%;
+	left: 1%;
+	top: 1%;
+	-webkit-border-radius: 50%;
+	border: 1px solid #ccc;
+}
+
+.celebrity_details_even {
+	border-left-style: none;
+	position: absolute;
+	width: 55%;
+	height: 27%;
+	top: 29%;
+	right: 23.5%;
+	-webkit-border-radius: 18px;
+	border: 1px solid #ccc;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffb76b),
+		color-stop(50%, #ffa73d), color-stop(70%, #ff7c00),
+		color-stop(100%, #ff7f04));
+}
+
+.celebrity_name,.celebrity_name_even {
+	position: relative;
+	width: 60%;
+	height: 100%;
+	color: white;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(47%, #45484d),
+		color-stop(100%, #000000));
+	display: inline-block;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(47%, #45484d),
+		color-stop(100%, #000000));
+}
+
+.text_wrap {
+	top: 4px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 150%;
+}
+
+.text_wrap_l {
+	vertical-align: middle;
+	line-height: 30px;
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8fc400),
+		color-stop(100%, #8fc400));
+	-webkit-border-radius: 14px;
+}
+
+.text_wrap_l_un {
+	vertical-align: middle;
+	line-height: 30px;
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f85032),
+		color-stop(50%, #f16f5c), color-stop(71%, #f6290c),
+		color-stop(71%, #f02f17), color-stop(100%, #e73827));
+	-webkit-border-radius: 14px;
+	border: 1px solid #ccc;
+}
+
+.celebrity_name {
+	left: 5%;
+}
+
+.celebrity_name_even {
+	left: 36.3%;
+}
+
+.celebrity_likes,.celebrity_likes_even {
+	position: absolute;
+	width: 31%;
+	height: 100%;
+	top: 20%;
+	font-size: 120%;
+}
+
+.celebrity_likes {
+	left: 67%;
+}
+
+.celebrity_likes_even {
+	left: 4%;
+}
+
+.celebrity_follow,.celebrity_follow_even {
+	color: white;
+	font-size: 20px;
+	font-family: ‘Trebuchet MS’, Helvetica, sans-serif;
+	text-align: center;
+	position: absolute;
+	width: 27%;
+	height: 20%;
+	top: 64%;
+}
+
+.celebrity_follow {
+	left: 21%;
+}
+
+.celebrity_follow_even {
+	left: 52.5%;
+}
+
+.celebrity_unfollow,.celebrity_unfollow_even {
+	color: white;
+	font-size: 20px;
+	font-family: ‘Trebuchet MS’, Helvetica, sans-serif;
+	text-align: center;
+	position: absolute;
+	width: 27%;
+	height: 20%;
+	top: 64%;
+}
+
+.celebrity_unfollow {
+	left: 21%;
+}
+
+.celebrity_unfollow_even {
+	left: 55.5%;
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script> 
+
+  
+  <style type='text/css'> 
+  </style> 
+<script type='text/javascript'>//<![CDATA[ 
+
+$(function () {
+        $('#sentiment').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Segmentation by Religion'
+            },
+           
+            xAxis: {
+                categories: [
+                    'Congress',
+                    'BJP',
+                    'AAp',
+                    'Others' 
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number(votes)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Hindu',
+                data: [49.9, 71.5, 106.4, 129.2]
+    
+            }, {
+                name: 'Christian',
+                data: [83.6, 78.8, 98.5, 93.4]
+    
+            }, {
+                name: 'Muslim',
+                data: [48.9, 38.8, 39.3, 41.4 ]
+    
+            }, {
+                name: 'Others',
+                data: [42.4, 33.2, 34.5, 39.7]
+    
+            }]
+        });
+    });
+    
+
+//]]>  
+
+</script>
+  
+<script type='text/javascript'>//<![CDATA[ 
+
+$(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Poll Comparisions'
+            },
+             
+            xAxis: {
+                categories: ['BJP', 'Congess', 'AAP', 'Left', 'Others'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Seats                            ',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' millions'
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -40,
+                y: 100,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor: '#FFFFFF',
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'Year 2005',
+                data: [107, 31, 635, 203, 2]
+            }, {
+                name: 'Year 2010',
+                data: [133, 156, 947, 408, 6]
+            }, {
+                name: 'Year 2013',
+                data: [973, 914, 2052, 732, 34]
+            }]
+        });
+    });
+    
+
+//]]>  
+
+</script>
+
+
+<script type='text/javascript'>//<![CDATA[ 
+
+$(function () {
+        $('#sex').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Segmentation by Gender'
+            },
+            xAxis: {
+                categories: ['App', 'Congress', 'BJP', 'Others', 'Left']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Segmentation by Gender'
+                }
+            },
+            legend: {
+                backgroundColor: '#FFFFFF',
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+                series: [{
+                name: 'Male',
+                data: [5, 3, 4, 7, 2]
+            }, {
+                name: 'Female',
+                data: [2, 2, 3, 2, 1]
+            }]
+        });
+    });
+    
+
+//]]>  
+
+</script>
+
+ 
+<script type='text/javascript'>//<![CDATA[ 
+
+$(function () {
+        $('#age').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Segmentation by Age'
+            },
+            xAxis: {
+                categories: ['App', 'Congress', 'BJP', 'Others', 'Left']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Segmentation by Age'
+                }
+            },
+            legend: {
+                backgroundColor: '#FFFFFF',
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+                series: [{
+                name: 'Age 20 - 30',
+                data: [5, 3, 4, 7, 2]
+            }, {
+                name: 'Age 30 - 50',
+                data: [2, 2, 3, 2, 1]
+            },
+			{
+                name: 'Age above 50',
+                data: [2, 2, 3, 2, 1]
+            }]
+        });
+    });
+    
+
+//]]>  
+
+</script>
+
+</head>
+<body style ="background-color:white">
+<script src="../js_th/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div>
+
+</div>
+<TABLE>  
+   <TR> 
+   <h3 style="font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;font-size: 20px;color: crimson;">Pass Voting Pattern</h3>
+   <div id="container" style="width: 1000px; float:left; height: 350px; border: 1px solid blue; margin-top:3px"></div>   
+   </TR>
+	<TR>
+     <div id = "main_container" style="float:left; height:360px;margin-top: 20px;">
+     <h3 style="font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;font-size: 20px;color: crimson;">Poll Analysis by Demographics</h3>
+	 <div id="sentiment" style="float:left; width: 325px; height: 350px; border: 1px solid blue;"></div>
+	 <div id="sex" style="float:left; width: 325px; height: 350px; border: 1px solid blue; margin-left:10px"></div>
+  	 <div id="age" style="float:left; width: 325px; height: 350px; border: 1px solid blue; margin-left:10px"></div>
+  	 </div>
+
+  </TR>
+  
+</TABLE>    
+</body> 
+</html>
+

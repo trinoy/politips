@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Memorendum</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link href="../css_phani/styles.css" rel="stylesheet" />
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
+<script src="../js_phani/knockout-3.0.0.js"></script>
+<script src="../js_phani/globalize.min.js"></script>
+<script src="../js_phani/dx.chartjs.js"></script>
+
+
+
+<script>
+
+$(function ()  
+				{
+   var dataSource = [
+    { state: "Education", AAIDMK: 500, Congress: 470, BJP: 460 },
+    { state: "Sci & Tech", AAIDMK: 250, Congress: 255, BJP: 270 },
+    { state: "Rural Dev", AAIDMK: 475, Congress: 440, BJP: 550 },
+    { state: "Agriculture", AAIDMK: 480, Congress: 400, BJP: 500 },
+    { state: "IT", AAIDMK: 340, Congress: 390, BJP: 395 }
+];
+
+$("#chartContainer").dxChart({
+    dataSource: dataSource,
+    commonSeriesSettings: {
+        argumentField: "state",
+        type: "bar",
+        hoverMode: "allArgumentPoints",
+        selectionMode: "allArgumentPoints",
+        label: {
+            visible: true,
+            format: "fixedPoint",
+            precision: 0
+        }
+    },
+    series: [
+        { valueField: "BJP", name: "BJP" },
+        { valueField: "Congress", name: "Congress" },
+        { valueField: "AAIDMK", name: "AAIDMK" }
+    ],
+    title: "Political Analysis",
+    legend: {
+        verticalAlignment: "center",
+        horizontalAlignment: "top"
+    },
+    pointClick: function (point) {
+		$("#dynamic_div").show( "fold", 1000);
+    }
+});
+
+$('#chartContainer1').dxCircularGauge({
+	scale: {
+		startValue: 0,
+		endValue: 100,
+		majorTick: {
+			tickInterval: 10
+		},
+		label: {
+			customizeText: function (arg) {
+				return arg.valueText + ' %';
+			}
+		}
+	},
+	rangeContainer: {
+		ranges: [
+			{ startValue: 0, endValue: 20, color: '#CE2029' },
+			{ startValue: 20, endValue: 50, color: '#FFD700' },
+			{ startValue: 50, endValue: 100, color: '#228B22' }
+		]
+	},
+	title: {
+		text: 'Positive wave',
+		font: { size: 28 }
+	},
+	value: 45
+});
+
+}
+);
+			
+			
+function changevalue() {	
+		
+	var guage1;
+	gauge1 = $('#chartContainer1').dxCircularGauge('instance'),
+    gauge1.value(parseFloat(70));
+		} 
+		
+function hideDiv() {
+		$("#dynamic_div").hide();	
+}
+ 
+ </script>
+
+
+</head>
+
+
+
+<body onload="hideDiv()">
+	<div id="wrap">
+		<div id="left_container">
+			<div id="poli_container">
+			
+			<div style="width: 100%; height: 29% ;">
+			<div class="content">
+			<div class="guagePanel">
+				
+				<div id="chartContainer1" ></div>
+				<div class="credits"></div>
+			</div>
+			<div>
+			<button type="button" onclick="changevalue()">Change Value</button>
+			</div>
+			</div>
+			</div>
+				
+				<div style="width: 100%; height: 60%;">		
+				<div class="content">
+					<div class="pane">
+						<div id="chartContainer" ></div>
+				</div>
+				</div>   
+				</div>
+				
+				
+			</div>
+		</div>
+		<div id="right_container">
+			<div id="video_analysis" >
+				
+				<div id="dynamic_div">
+				
+				<div id="container1">
+				<div class="textDis"> Acheivements by Congress   <input class="gobutton" type="submit" value="Get Score" onclick="changevalue()"/></div>
+				<table border="0" width="100%">
+					  <col width="80%">
+					  <col width="10%">
+					  <col width="10%" >
+						<tr>
+							<th>Points</th>
+							<th>Percentage</th>
+							<th>Status</th>
+						</tr>
+						<tr>
+							<td>Massive Expansion for Higher Education: 8 new IITs, 7new IIMs, 5 new IISER</td>
+							<td>100%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgStyle"></td>
+						</tr>
+						<tr>
+							<td>374 colleges are opened in educationally-deprived districts to ensure focus on excellence.</td>
+							<td>80%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgStyle"></td>
+						</tr>
+						<tr>
+							<td>According to the CAG report 42% enrolled girls withdrew from LADLI Scheme</td>
+							<td>42%</td>
+							<td><img src="../img_phani/thumbsdown.png" class="imgThumbsDown"></td>  
+						</tr>
+						<tr>
+							<td>Congress in Delhi alone shut down 80 government schools</td>
+							<td>45%</td>
+							<td><img src="../img_phani/thumbsdown.png" class="imgThumbsDown"></td> 
+						</tr>
+				</table>
+				
+				
+				</div>
+					
+				<br />
+				<br />
+				<div id="container2">
+				
+				<div class="textDis"> Acheivements by BJP  <input class="gobutton" type="submit" value="Get Score" onclick="changevalue()"/> </div>
+				<table border="0" width="100%">
+					  <col width="80%">
+					  <col width="10%">
+					  <col width="10%" >
+						<tr>
+							<th>Points</th>
+							<th>Percentage</th>
+							<th>Status</th>
+						</tr>
+						<tr>
+							<td>GUJ : The dropout for elementary section decreased from 35.40(1996) 2.2(2009)</td>
+							<td>95%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgStyle"></td> 
+						</tr>
+						<tr>
+							<td>Various schemes like Giving free textbook and Bicycle uptill class 10th were introduced in karnataka during BJP tenure</td>
+							<td>60%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgStyle"></td> 
+						</tr>
+						<tr>
+							<td>Comparatively BJP Ruled states have recruited more teachers for Primary Education Dept</td>
+							<td>45%</td>
+							<td><img src="../img_phani/thumbsdown.png" class="imgThumbsDown"></td> 
+						</tr>
+						<tr>
+							<td>Gujarath is behind kerala in Education and Literacy rates</td>
+							<td>42%</td>
+							<td><img src="../img_phani/thumbsdown.png" class="imgThumbsDown"></td> 
+						</tr>
+				</table>
+				
+				</div>
+				
+				<br />
+				<br />
+				<div id="container3">
+				<div class="textDis"> Acheivements by AAIDMK   <input class="gobutton" type="submit" value="Get Score" onclick="changevalue()"/>  </div>
+				<table border="0" width="100%">
+					  <col width="80%">
+					  <col width="10%">
+					  <col width="10%" >
+						<tr>
+							<th>Points</th>
+							<th>Percentage</th>
+							<th>Status</th>
+						</tr>
+						<tr>
+							<td>1082.71-crore infrastructure development scheme was announced in SSA</td>
+							<td>85%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgStyle"></td> 
+						</tr>
+						<tr>
+							<td>New scheme ICT@Schools was announced which would help kids understand core concepts in a better way</td>
+							<td>70%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgStyle"></td> 
+						</tr>
+						<tr>
+							<td>Satellite-based dissemination of compilation of lectures in some schools</td>
+							<td>60%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgThumbsDown"></td> 
+						</tr>
+						<tr>
+							<td>Establishment of University Business Collaboration Centre, Incubation and Technology Transfer Centres</td>
+							<td>65%</td>
+							<td><img src="../img_phani/thumbsup.png" class="imgThumbsDown"></td> 
+						</tr>
+				</table>
+				
+				</div>
+				
+				
+				</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

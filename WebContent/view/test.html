@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ 
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Vote</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+   <script src="../js_th/jquery-1.10.2.min.js"></script>
+    <script src="../js_th/knockout-3.0.0.js"></script>
+	<script src="../js_th/globalize.min.js"></script>
+	<script src="../js_th/dx.chartjs.js"></script>
+
+ 
+<script>
+
+$(function ()  
+				{
+
+$('#chartContainer1').dxCircularGauge({
+	scale: {
+		startValue: 0,
+		endValue: 100,
+		majorTick: {
+			tickInterval: 10
+		},
+		label: {
+			customizeText: function (arg) {
+				return arg.valueText + ' %';
+			}
+		}
+	},
+	rangeContainer: {
+		ranges: [
+			{ startValue: 0, endValue: 20, color: '#CE2029' },
+			{ startValue: 20, endValue: 50, color: '#FFD700' },
+			{ startValue: 50, endValue: 100, color: '#228B22' }
+		]
+	},
+	title: {
+		text: 'Positive wave',
+		font: { size: 28 }
+	},
+	value: 10
+});
+
+}
+);
+			
+			
+function changevalue(val) {	
+
+	  gauge1 = $('#chartContainer1').dxCircularGauge('instance'),
+	  gauge1.value(parseFloat(val));
+	  $('#lable1').text(val + '%');
+}
+ 
+ </script> 
+</head> 
+<body>  	
+			
+		    <div id="chartContainer1" style="margin-top: 105px;"></div> 
+		      <div id="lable1" style=" font-weight: 800; margin-top: -42px;float: left;margin-left: 117px;font-size: 30px;font-family: monospace;">10%</div> 		  
+			
+			
+			
+
+		 
+</body>
+</html>
